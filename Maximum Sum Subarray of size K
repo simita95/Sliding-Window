@@ -1,1 +1,35 @@
-dvd
+package Codes;
+
+
+
+public class sorting  {
+	
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int arr[]= {2,3,5,2,9,7,1};
+		int size=3;
+		int sum=0;
+		int maxSum=0;
+		int start=0,end=0;
+		while(end<arr.length) {
+			sum+=arr[end];
+			if ((end-start+1)<size) {
+				end++;
+				
+			}
+			else if ((end-start+1)==size) {
+				maxSum=Math.max(maxSum, sum);
+				sum-=arr[start];
+				start++;
+				end++;
+			}
+			
+		}
+		System.out.println(maxSum);
+		
+		
+		
+	}
+
+}
