@@ -1,0 +1,46 @@
+package Codes;
+
+import java.security.DrbgParameters.Reseed;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Queue;
+import java.util.Stack;
+import java.util.stream.DoubleStream;
+import java.util.stream.Stream;
+
+public class sorting  {
+	
+	public static void main(String[] args) {
+		int arr[]= {12,-1,-7,8,-15,30,16,28};
+		int k=3;
+		int i=0,j=0;
+		int result[]=new int[arr.length-k+1];
+		int index=0;
+		Queue<Integer> q=new LinkedList<>();
+		while(j<arr.length) {
+			if(arr[j]<0) {
+				q.add(arr[j]);
+			}
+			if(j-i+1==k) {
+				if(q.size()==0) {
+					result[index++]=0;
+				}
+				else {
+					result[index++]=q.peek();
+					if(arr[i]==q.peek()) {
+						q.poll();
+					}
+				}
+				i++;
+			}
+			j++;
+		}
+		
+		
+		for(int a=0;a<result.length;a++) {
+			System.out.print(result[a]+" ");
+		}
+		System.out.println();
+	}
+
+}
